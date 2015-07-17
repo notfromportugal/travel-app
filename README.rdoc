@@ -1,0 +1,32 @@
+== README
+
+Four Winds Travel App Version 1.0 7/17/2015
+
+
+GENERAL USAGE NOTES
+-------------------
+
+- This blog serves as a Travel Hub for world travelers. It provides Admin and user generated content as well as current exchange rates around the world.
+
+
+INSTALLATION
+------------
+
+- Run this app on any major browser, including mobile.
+
+- Created with Ruby 2.2.2 & Rails 4.2.0
+
+
+------------------
+------------------
+
+
+Four Winds can be reached at:
+
+Voice:		217-273-9898
+Website:	kevinportugal.com
+Email:		portugalkevin@gmail.com
+
+
+Copyright 2015 Four Winds Corporation. All Rights Reserved. Four Winds and its use are subject to a license agreement and are also subject to copyright, trademark, patent and/or other laws. All other brand and product names are trademarks or registered. 
+

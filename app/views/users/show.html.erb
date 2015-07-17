@@ -1,0 +1,23 @@
+
+
+<div class="page-header">
+    <h1>Your Posts <br> <small>Click Create Post to get started.</small></h1>
+</div>
+
+
+<div class="list-group">
+  <ul>   
+    <% @letters.each do |letter| %>
+        <li class="list-group-item active">
+            <strong> To: <%= letter.reciever %> </strong>
+            <br>
+            <strong> <%= letter.title %> </strong> 
+            <%= link_to "Click to Review this Post", letter_path(letter) %>
+        </li>
+    <% end %>
+  </ul>
+</div>
+
+
+
+  

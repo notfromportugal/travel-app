@@ -1,0 +1,27 @@
+<div class="signin">
+<%= form_for(@user) do |f| %>
+
+      <% flash.each do |key,value|  %>
+        <div class="<%= key %>" > <%= value %> </div>
+      <% end %>
+
+      <h1>Register with Four Winds</h1>
+
+      <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+      <%= f.label :password_confirmation, "Password Confirmation" %>
+      <%= f.password_field :password_confirmation, class: "form-control" %>
+      </div>
+
+      <%= f.submit "Signup", class: "btn btn-primary" %>
+<% end %>
+</div>

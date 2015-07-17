@@ -1,0 +1,18 @@
+language: ruby
+rvm:
+- 2.0.0-p481
+branches:
+  only:
+  - master
+install:
+- travis_retry bundle install
+before_script:
+- psql -c 'create database letterapp_test;' -U postgres
+deploy:
+  provider: heroku
+  api_key:
+    secure: KVWdqH98JVrvvfgoQnzn6ues/jdB+rR32Nn47WdmE/B0cjYQu7ZOu0bqnN64iew47OfY1ZsQGvWy5+91KIpOHQ8Zuf1S7LWl6xmdMcIdla2Ewa4u0+2zmnZTaEpoF2rHEaD03+oRuV/QDMCtTl5c96/BiZQAsOMucM+uSJpCHokx+0GLQNeuvGwtUhWosbEBY/QWOP3TgWvlwcm//D7OW4JdjLC+AnjmOEABc/vapY1yEu/0kAXtvE/DV/N1PAxMwS7DGnEE1/PyNwgwx8DuqAoh8kFItGWWp3JR1KIsLtt970ugqYB7MpR3mHE2ZptRZ7z9Qd48kY4WLceU2AkUEFIV12XxDY2+I9970Z7ov8pkkTPmH/pretCX9fWwj5UHKKNpGVyorysvIQJTeCdL6FtUsxYr9RVblkDPoISLZWJFDazEri9vTp9f8kaqbUit8ohoJi3+fStXz+1WBdj6oj1T+rhX7gLK4Iy3nj5zdc9eZLDXiXdH8eKAxhqaJP7YrviKsuPZCWuzSdtYkwH5+N3w6O2082Nju7nhMwps/JcsYiC6KsFZuDE5UvxvL8r5EciAQV3Pa8XxpPcdEjHlKVLaAzxbZ4EhWKVzPTA8tdG7FlBmYJQrIaD7ZMZT1gA+y/Sl9BSfCx6sezOpyJTwbnlsL2xKFnvyhjs6vjzNHOE=
+  app: murmuring-woodland-7732 
+  run:
+    - "rake db:migrate"
+    - restart

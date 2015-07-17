@@ -1,0 +1,29 @@
+
+<div class="signin">
+<h1>Create a Post</h1>
+
+<%= form_for @letters do |f| %>
+
+    <div class="form-group">
+        <%= f.label :recipient %>
+        <%= f.text_field :reciever, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="form-group form-group-xlg">
+        <%= f.label :content %>
+        <%= f.text_area :content, class: "form-control" %>
+    </div>
+
+    <div class="btn btn-default">
+    <%= f.submit "Save Post" %>
+    </div>
+    
+
+<% end %>
+</div>
+

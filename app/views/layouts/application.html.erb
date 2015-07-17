@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Four Winds</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+</head>
+<body class="container-fluid">
+<nav class="navbar navbar-inverse">
+  <%= image_tag ("cooltext127378983887088.png"), class: "centro" %>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/ ">
+        <img alt="Home" id="logo" src="http://bestofmarthas.com/assets/img/directions.png">
+      </a>
+
+      <div class="btn btn-default" id="viewpost">
+        <% if current_user  %>
+          <%= link_to "View Posts", user_letters_path(current_user) %>
+        <% else %>
+          <%= link_to "View Posts", new_session_path %>
+        <% end %>
+      </div>
+
+      <div class="btn btn-default" id="newpostbtn">
+        <% if current_user  %>
+          <%= link_to "Create Post", new_letter_path %>
+        <% else %>
+          <%= link_to "Create Post", new_session_path %>
+        <% end %>
+      </div>
+
+      <div class="btn btn-default" id="login">
+        <% if current_user  %>
+          <%= link_to "Logout", destroy_session_path %>
+        <% else %>
+          <%= link_to "Login", new_session_path %>
+        <% end %>
+      </div>
+      
+      <p class="navbar-text" id="navtext">
+        <% if current_user  %>You are signed in as <%= current_user.email %></p> 
+        <% else %>You are not signed in<% end %>
+      </p>
+
+    
+    </div>
+  </div>
+</nav>
+
+<%= yield %>
+
+  <footer class="footer">
+    <p class="pull-right"><a href="#">Back to top</a></p>
+    <p>This website was created by Kevin Portugal. · <a href="www.kevinportugal.com">Designs By Kevin</a></p>
+  </footer>
+
+</body>
+</html>
